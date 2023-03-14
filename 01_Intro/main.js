@@ -27,3 +27,6 @@ const side = +prompt("Enter square side:");
 
 console.log(`Increment: ${side + 1}`);
 console.log(`Area of the square: ${side * side}`);
+
+// {number} ** {step} - return stepin of a number
+console.log('Stepin: ' + side ** 3);
