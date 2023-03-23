@@ -5,6 +5,12 @@ let isValid = true;             // boolean
 let emptyObj = null;            // null
 let undefinedVar = undefined;   // undefined
 
+console.log(testVar); // undefined
+var testVar;
+console.log(testVar); // null
+var testVar = 10;
+console.log(testVar); // 10
+
 console.log("Type of price: " + typeof (price));
 console.log("Type of email: " + typeof (email));
 console.log("Type of isValid: " + typeof (isValid));
