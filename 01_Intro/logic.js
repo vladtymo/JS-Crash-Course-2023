@@ -1,5 +1,6 @@
+// ------------ logic operators ------------
 // login operators:       > < == != >= <=
-// condition combinators: && ||
+// condition combinators: && (logic and) || (login or)
 
 // type comparison:
 // == !=   — loose equality
@@ -25,6 +26,12 @@ if ("Julia" > "Bob")
     console.log("Bob");
 else
     console.log("Julia");
+
+// check number for the range [10...20]
+if (number >= 10 && number <= 20) {
+    console.log("Your number is in the range [10...20]");
+}
+else console.warn("Your number is out of the range [10...20]");
 
 // ------------ ternary operator ------------
 // template: (condition ? expression_if_true : expression_if_false)
