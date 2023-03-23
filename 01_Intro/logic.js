@@ -56,3 +56,13 @@ switch (weekday) {
     case 7: console.log("Today is Sunday!"); break;
     default: console.log("Incorrect weekday number!");
 }
+
+// using switch with conditions
+switch (true) {
+    case 4 > 2:
+        break;
+    case "1" === 1:
+        break;
+    default:
+        break;
+}
