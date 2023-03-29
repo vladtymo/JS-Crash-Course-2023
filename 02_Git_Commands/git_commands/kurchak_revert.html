@@ -7,129 +7,176 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Revert</title>
 	<style>
+		body {
+			padding: 0;
+			margin: 0;
+		}
 
+		nav {
+			padding: 2px 12px;
+			margin: 2px 12px;
+		}
+
+		a {
+			color: rgb(191, 0, 255);
+			font-size: 1.5em;
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		main {
+			padding: 8px 16px;
+			margin: 8px 16px;
+		}
+
+		h2.main {
+			font-size: 2.4em
+		}
+
+		h2 {
+			font-size: 32px;
+			color: red;
+		}
+
+		p,
+		code {
+			font-size: 20px;
+		}
+
+		code {
+			color: red;
+			font-weight: bold;
+
+		}
 	</style>
 </head>
 
 <body>
 	<nav>
-		<h2>Git Commands References:</h2>
+		<h2 class="main">Git Commands References:</h2>
 		<a href="/02_Git_Commands/index.html">Home</a>
 	</nav>
-	<h1>Revert</h1>
+	<main>
+		<div>
+			<h2>Name</h2>
 
-	<div>
-		<h2>Name</h2>
-
-		<p>git-revert - Revert some existing commits</p>
-	</div>
-	<div>
-		<h2>Synopsis</h2>
-		<code><pre>
+			<p>git-revert - Revert some existing commits</p>
+		</div>
+		<div>
+			<h2>Synopsis</h2>
+			<code><pre>
 <b>git revert</b> [--[no-]edit] [-n] [-m &lt;parent-number&gt;] [-s] [-S[&lt;keyid&gt;]]
 &lt;commit&gt;…​
 <b>git revert</b> (--continue | --skip | --abort | --quit)
 	</pre></code>
-	</div>
-	<div>
-		<h2>Description</h2>
-		<p>Given one or more existing commits, revert the changes that the related patches introduce, and record
-			some new commits that record them. This requires your working treee to be clean(no modifications from
-			the HEAD commit).
-		</p>
-		<p>
-			Note: git revert is used to record some new commits to reverse the effect of some earlier commits
-			(often only a faulty one). If you want to throw away all uncommitted changes in your working directory,
-			you should see git-reset[1], particularly the <code>--hard</code> option. If you want to extract specific files
-			as they were
-			in
-			another commit, you should see git-restore[1], specifically the <code>--source</code> option. Take care with
-			these alternatives as both will discard uncommitted changes in your working directory.
-		</p>
-	</div>
-	<div>
-		<h2>Options</h2>
-		<code>&lt;commit&gt;...</code>
-		<p>
-			Commits to revert. For a more complete list of ways to spell commit names, see gitrevisions[7]. Sets of commits
-			can also be given but no traversal is done by default, see git-rev-list[1] and its <code>--no-walk</code>
-			option.
-		</p>
-		<code>-e</code>
-		<code>--edit</code>
-		<p>
-			With this option, <code>git revert</code> will let you edit the commit message prior to committing the revert.
-			This is the
-			default if you run the command from a terminal.
-		</p>
-		<code>-m parent-number </code>
-		<code>--mainline parent-number </code>
-		<p>
-			Usually you cannot revert a merge because you do not know which side of the merge should be considered the
-			mainline. This option specifies the parent number (starting from 1) of the mainline and allows revert to
-			reverse the change relative to the specified parent.
-		</p>
-		<p>
-			Reverting a merge commit declares that you will never want the tree changes brought in by the merge. As a
-			result, later merges will only bring in tree changes introduced by commits that are not ancestors of the
-			previously reverted merge. This may or may not be what you want.
-		</p>
-		<code>--no-edit </code>
-		<p>With this option, <code>git revert</code> will not start the commit message editor.</p>
-		<code>--cleanup=&lt;mode&gt; &lt;/code&gt;
-		<p>
-			This option determines how the commit message will be cleaned up before being passed on to the commit machinery. See git-commit[1] for more details.
-			 In particular, if the <code>&lt;mode&gt;</code> is given a value of <code>scissors</code>, scissors will be
-		appended to <code>MERGE_MSG</code> before being passed on in the case of a conflict.
-		</p>
-		<code>-n</code>
-		<code>--no-commit</code>
-		<p>
-			Usually the command automatically creates some commits with commit log messages stating which commits were
-			reverted. This flag applies the changes necessary to revert the named commits to your working tree and the
-			index, but does not make the commits. In addition, when this option is used, your index does not have to match
-			the HEAD commit. The revert is done against the beginning state of your index.
-		</p>
-		<p>This is useful when reverting more than one commits' effect to your index in a row.</p>
-	</div>
-	<div>
-		<h2>Sequencer subcommands</h2>
-		<code>--continue </code>
-		<p>Continue the operation in progress using the information in <code>.git/sequencer</code>. Can be used to
-			continue after
-			resolving conflicts in a failed cherry-pick or revert.</p>
+		</div>
+		<div>
+			<h2>Description</h2>
+			<p>Given one or more existing commits, revert the changes that the related patches introduce, and record
+				some new commits that record them. This requires your working treee to be clean(no modifications from
+				the HEAD commit).
+			</p>
+			<p>
+				Note: git revert is used to record some new commits to reverse the effect of some earlier commits
+				(often only a faulty one). If you want to throw away all uncommitted changes in your working directory,
+				you should see git-reset[1], particularly the <code>--hard</code> option. If you want to extract specific
+				files
+				as they were
+				in
+				another commit, you should see git-restore[1], specifically the <code>--source</code> option. Take care with
+				these alternatives as both will discard uncommitted changes in your working directory.
+			</p>
+		</div>
+		<div>
+			<h2>Options</h2>
+			<code>&lt;commit&gt;...</code>
+			<p>
+				Commits to revert. For a more complete list of ways to spell commit names, see gitrevisions[7]. Sets of
+				commits
+				can also be given but no traversal is done by default, see git-rev-list[1] and its <code>--no-walk</code>
+				option.
+			</p>
+			<code>-e</code>
+			<code>--edit</code>
+			<p>
+				With this option, <code>git revert</code> will let you edit the commit message prior to committing the
+				revert.
+				This is the
+				default if you run the command from a terminal.
+			</p>
+			<code>-m parent-number </code>
+			<code>--mainline parent-number </code>
+			<p>
+				Usually you cannot revert a merge because you do not know which side of the merge should be considered the
+				mainline. This option specifies the parent number (starting from 1) of the mainline and allows revert to
+				reverse the change relative to the specified parent.
+			</p>
+			<p>
+				Reverting a merge commit declares that you will never want the tree changes brought in by the merge. As a
+				result, later merges will only bring in tree changes introduced by commits that are not ancestors of the
+				previously reverted merge. This may or may not be what you want.
+			</p>
+			<code>--no-edit </code>
+			<p>With this option, <code>git revert</code> will not start the commit message editor.</p>
+			<code>--cleanup=&lt;mode&gt; </code>
+			<p>
+				This option determines how the commit message will be cleaned up before being passed on to the commit
+				machinery. See git-commit[1] for more details.
+				In particular, if the <code>&lt;mode&gt;</code> is given a value of <code>scissors</code>, scissors will be
+				appended to <code>MERGE_MSG</code> before being passed on in the case of a conflict.
+			</p>
+			<code>-n</code>
+			<code>--no-commit</code>
+			<p>
+				Usually the command automatically creates some commits with commit log messages stating which commits were
+				reverted. This flag applies the changes necessary to revert the named commits to your working tree and the
+				index, but does not make the commits. In addition, when this option is used, your index does not have to
+				match
+				the HEAD commit. The revert is done against the beginning state of your index.
+			</p>
+			<p>This is useful when reverting more than one commits' effect to your index in a row.</p>
+		</div>
+		<div>
+			<h2>Sequencer subcommands</h2>
+			<code>--continue </code>
+			<p>Continue the operation in progress using the information in <code>.git/sequencer</code>. Can be used to
+				continue after
+				resolving conflicts in a failed cherry-pick or revert.</p>
 
-		<code>--skip </code>
-		<p>Skip the current commit and continue with the rest of the sequence.</p>
+			<code>--skip </code>
+			<p>Skip the current commit and continue with the rest of the sequence.</p>
 
-		<code>--quit </code>
-		<p>Forget about the current operation in progress. Can be used to clear the sequencer state after a failed
-			cherry-pick or revert.</p>
+			<code>--quit </code>
+			<p>Forget about the current operation in progress. Can be used to clear the sequencer state after a failed
+				cherry-pick or revert.</p>
 
-		<code>--abort </code>
-		<p>Cancel the operation and return to the pre-sequence state.</p>
-	</div>
-	<div>
-		<h2>Examples</h2>
-		<code>git revert HEAD~3</code>
-		<p>Revert the changes specified by the fourth last commit in HEAD and create a new commit with the reverted
-			changes.</p>
-		<code>git revert -n master~5..master~2</code>
-		<p>
-			Revert the changes done by commits from the fifth last commit in master (included) to the third last commit in
-			master (included), but do not create any commit with the reverted changes. The revert only modifies the working
-			tree and the index.
-		</p>
-	</div>
-	<div>
-		<h2>Configuration</h2>
-		<p>Everything below this line in this section is selectively included from the git-config[1] documentation. The
-			content is the same as what’s found there:</p>
-		<code>revert.reference</code>
-		<p>Settings this variable to true makes <code>git revert</code> behave as if the
-			<code>--reference</code> option is given.
-		</p>
-	</div>
+			<code>--abort </code>
+			<p>Cancel the operation and return to the pre-sequence state.</p>
+		</div>
+		<div>
+			<h2>Examples</h2>
+			<code>git revert HEAD~3</code>
+			<p>Revert the changes specified by the fourth last commit in HEAD and create a new commit with the reverted
+				changes.</p>
+			<code>git revert -n master~5..master~2</code>
+			<p>
+				Revert the changes done by commits from the fifth last commit in master (included) to the third last commit
+				in
+				master (included), but do not create any commit with the reverted changes. The revert only modifies the
+				working
+				tree and the index.
+			</p>
+		</div>
+		<div>
+			<h2>Configuration</h2>
+			<p>Everything below this line in this section is selectively included from the git-config[1] documentation. The
+				content is the same as what’s found there:</p>
+			<code>revert.reference</code>
+			<p>Settings this variable to true makes <code>git revert</code> behave as if the
+				<code>--reference</code> option is given.
+			</p>
+		</div>
+	</main>
 </body>
 
 </html>
