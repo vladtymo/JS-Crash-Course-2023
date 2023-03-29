@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Merge</title>
+    <style>
+        h2{
+            color: #f14e32;
+        }
+        pre{
+            display: inline-block;
+            background-color: #e8e7dd;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>About Git Merge Command</h1>
+
+    <h2>NAME</h2>
+    <p>git-merge - Join two or more development histories together</p>
+
+    <h2>DESCRIPTION</h2>
+    <p>
+        Incorporates changes from the named commits (since the time their histories diverged from the current branch) into the current branch. This command is used by git pull to incorporate changes from another repository and can be used by hand to merge changes from one branch into another.
+        Assume the following history exists and the current branch is "master":<br>
+        <pre>
+         A---B---C topic
+        /
+    D---E---F---G master
+        </pre>
+        <br>
+        Then "git merge topic" will replay the changes made on the topic branch since it diverged from master (i.e., E) until its current commit (C) on top of master, and record the result in a new commit along with the names of the two parent commits and a log message from the user describing the changes. Before the operation, ORIG_HEAD is set to the tip of the current branch (C).
+        <br>
+        <pre>
+         A---B---C topic
+        /         \
+    D---E---F---G---H master
+        </pre>
+        <br>
+        The second syntax ("git merge --abort") can only be run after the merge has resulted in conflicts. git merge --abort will abort the merge process and try to reconstruct the pre-merge state. However, if there were uncommitted changes when the merge started (and especially if those changes were further modified after the merge was started), git merge --abort will in some cases be unable to reconstruct the original (pre-merge) changes. Therefore:
+
+        Warning: Running git merge with non-trivial uncommitted changes is discouraged: while possible, it may leave you in a state that is hard to back out of in the case of a conflict.
+
+        The third syntax ("git merge --continue") can only be run after the merge has resulted in conflicts.
+    </p>
+
+    <h2>SYNOPSIS</h2>
+    <p>
+        <code>
+            <pre>
+    git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit] 
+    [--no-verify] [-s <strategy>] [-X <strategy-option>] [-S[<keyid>]]
+    [--[no-]allow-unrelated-histories]
+    [--[no-]rerere-autoupdate] [-m <msg>] [-F <file>]
+    [--into-name <branch>] [<commit>…​]
+    git merge (--continue | --abort | --quit)
+            </pre>
+        </code>
+    </p>
+</body>
+
+</html>
