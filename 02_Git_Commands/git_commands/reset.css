@@ -2,3 +2,8 @@ h1, h2, p
 {
     font-family: 'Courier New', Courier, monospace;
 }
+
+h1
+{
+    font-weight: bold;
+}

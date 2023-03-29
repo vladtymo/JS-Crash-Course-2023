@@ -17,15 +17,16 @@
     </h2>
 <p>       In the first three forms, copy entries from &lt;tree-ish&gt; to the index. In the last form, set the current branch head (HEAD) to &lt;commit&gt;, optionally modifying index and working tree to match. The &lt;tree-ish&gt;/&lt;commit&gt; defaults to HEAD in all forms.</p> 
 
-<p>           git reset [-q] [&lt;tree-ish&gt;] [--] &lt;pathspec&gt;…​</p>
-<p>           git reset [-q] [--pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]] [&lt;tree-ish&gt;]​</p>
+<code>           git reset [-q] [&lt;tree-ish&gt;] [--] &lt;pathspec&gt;…​</code>
+<br>
+<code>           git reset [-q] [--pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]] [&lt;tree-ish&gt;]​</code>
 <p>           These forms reset the index entries for all paths that match the &lt;pathspec> to their state at &lt;tree-ish&gt;. (It does not affect the working tree or the current branch.)</p>
             
-<p>           This means that git reset &lt;pathspec&gt; is the opposite of git add &lt;pathspec&gt;. This command is equivalent to git restore [--source=&lt;tree-ish&gt;] --staged &lt;pathspec&gt;....</p>
+<p>           This means that git reset &lt;pathspec&gt; is the opposite of git add &lt;pathspec&gt;. This command is equivalent to <code> git restore [--source=&lt;tree-ish&gt;] --staged &lt;pathspec&gt;....</code></p>
             
 <p>           After running git reset &lt;pathspec&gt; to update the index entry, you can use git-restore[1] to check the contents out of the index to the working tree. Alternatively, using git-restore[1] and specifying a commit with --source, you can copy the contents of a path out of a commit to the index and to the working tree in one go.</p>
             
-<p>            git reset (--patch | -p) [&lt;tree-ish&gt;] [--] [&lt;pathspec&gt;…​]</p>
+<code>           git reset (--patch | -p) [&lt;tree-ish&gt;] [--] [&lt;pathspec&gt;…​]</code>
 <p>            Interactively select hunks in the difference between the index and &lt;tree-ish&gt; (defaults to HEAD). The chosen hunks are applied in reverse to the index.</p>
             
 <p>            This means that git reset -p is the opposite of git add -p, i.e. you can use it to selectively reset hunks. See the “Interactive Mode” section of git-add[1] to learn how to operate the --patch mode.</p>
@@ -33,26 +34,26 @@
 <p>            git reset [&lt;mode&gt;] [&lt;commit&gt;]</p>
 <p>           This form resets the current branch head to &lt;commit&gt; and possibly updates the index (resetting it to the tree of &lt;commit&gt;) and the working tree depending on &lt;mode&gt;. Before the operation, ORIG_HEAD is set to the tip of the current branch. If &lt;mode&gt; is omitted, defaults to --mixed. The &lt;mode&gt; must be one of the following:</p>
             
-<p>           --soft</p>
-<p>            Does not touch the index file or the working tree at all (but resets the head to &lt;commit&gt;, just like all modes do). This leaves all your changed files "Changes to be committed", as git status would put it.</p>
+<code>        --soft</code>
+<p>           Does not touch the index file or the working tree at all (but resets the head to &lt;commit&gt;, just like all modes do). This leaves all your changed files "Changes to be committed", as git status would put it.</p>
             
-<p>            --mixed</p>
+<code>        --mixed</code>
 <p>           Resets the index but not the working tree (i.e., the changed files are preserved but not marked for commit) and reports what has not been updated. This is the default action.</p> 
             
 <p>            If -N is specified, removed paths are marked as intent-to-add (see git-add[1]).</p>
             
-<p>            --hard</p>
+<code>         --hard</code>
 <p>            Resets the index and working tree. Any changes to tracked files in the working tree since &lt;commit&gt; are discarded. Any untracked files or directories in the way of writing any tracked files are simply deleted.</p>
             
-<p>            --merge</p>
+<code>         --merge</code>
 <p>            Resets the index and updates the files in the working tree that are different between &lt;commit&gt; and HEAD, but keeps those which are different between the index and working tree (i.e. which have changes which have not been added). If a file that is different between &lt;commit&gt; and the index has unstaged changes, reset is aborted.</p>
             
 <p>            In other words, --merge does something like a git read-tree -u -m &lt;commit&gt;, but carries forward unmerged index entries.</p>
             
-<p>            --keep</p>
+<code>            --keep</code>
 <p>            Resets index entries and updates files in the working tree that are different between &lt;commit&gt; and HEAD. If a file that is different between &lt;commit&gt; and HEAD has local changes, reset is aborted.</p>
             
-<p>            --[no-]recurse-submodules</p>
+<code>            --[no-]recurse-submodules</code>
 <p>            When the working tree is updated, using --recurse-submodules will also recursively reset the working tree of all active submodules according to the commit recorded in the superproject, also setting the submodules' HEAD to be detached at that commit.</p>
             
 <p>            See "Reset, restore and revert" in git[1] for the differences between the three commands.</p>
