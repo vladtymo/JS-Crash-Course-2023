@@ -5,28 +5,83 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Git status</title>
-  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="./status_style.css" type="text/css">
 </head>
 <body>
-  <h1>Git status</h1>
-  <h3>The git status command displays the state of the working directory and the staging area. It lets you see which changes have been staged, which haven’t, and which files aren’t being tracked by Git. Status output does not show you any information regarding the committed project history. For this, you need to use git log.</h3>
-  <h2>Related git commands</h2>
-  <ul>
-    <li>git tag  </li>
-    <ul>
-      <li>Tags are ref's that point to specific points in Git history. git tag is generally used to capture a point in history that is used for a marked version release (i.e. v1.0.1). </li>
-    </ul>
-    <li>git blame</li>
+  <header><h1>Git status</h1></header>
+  <div id="content">
+    <nav style="font-family: Bradley Hand, cursive;">
       <ul>
-        <li>The high-level function of git blame is the display of author metadata attached to specific committed lines in a file. This is used to explore the history of specific code and answer questions about what, how, and why the code was added to a repository.
-        </li>
+        <li><a href="./clone.html">Clone</a></li>
       </ul>
-    <li>git log  </li>
-    <ul>
-      <li>The git log command displays committed snapshots. It lets you list the project history, filter it, and search for specific changes. </li>
-    </ul>
-  </ul>
-  <h2>Discussion</h2>
-  <h3>The git status command is a relatively straightforward command. It simply shows you what's been going on with git add and git commit. Status messages also include relevant instructions for staging/unstaging files. </h3>
+    </nav>
+
+  
+  <div id="centerColumn">
+    <div class="sect1">
+ <h2>NAME</h2>
+ <p>git-status - Show the working tree status</p>
+    </div>
+    <div class="sect2">
+      <h2>SYNOPSIS</h2>
+      <p>git status [&lt;options&gt;] [--] [&lt;pathspec&gt;…​]</p>
+    </div>
+    <div class="sect3">
+      <h2>DESCRIPTION</h2>
+      <p>
+        Displays paths that have differences between the index file and the current HEAD commit, paths that have differences between the working tree and the index file, and paths in the working tree that are not tracked by Git (and are not ignored by gitignore[5]). The first are what you would commit by running git commit; the second and third are what you could commit by running git add before running git commit.
+      </p>
+    </div>
+    <div class="sect4">
+      <h2>OPTIONS</h2>
+      <p>
+        -s <br>
+--short<br>
+Give the output in the short-format.<br>
+<br>
+-b<br>
+--branch<br>
+Show the branch and tracking info even in short-format.<br>
+<br>
+--show-stash<br>
+Show the number of entries currently stashed away.<br>
+<br>
+--porcelain[=&lt;version&gt;]<br>
+Give the output in an easy-to-parse format for scripts. This is similar to the short output, but will remain stable across Git versions and regardless of user configuration. See below for details.<br>
+<br>
+The version parameter is used to specify the format version. This is optional and defaults to the original version v1 format.<br>
+<br>
+--long<br>
+Give the output in the long-format. This is the default.<br>
+<br>
+-v<br>
+--verbose<br>
+In addition to the names of files that have been changed, also show the textual changes that are staged to be committed (i.e., like the output of git diff --cached). If -v is specified twice, then also show the changes in the working tree that have not yet been staged (i.e., like the output of git diff).<br>
+<br>
+-u[&lt;mode&gt;]<br>
+--untracked-files[=&lt;mode&gt;]<br>
+Show untracked files.<br>
+
+The mode parameter is used to specify the handling of untracked files. It is optional: it defaults to all, and if specified, it must be stuck to the option (e.g. -uno, but not -u no).<br>
+<br>
+The possible options are:<br>
+<br>
+no - Show no untracked files.<br>
+<br>
+normal - Shows untracked files and directories.<br>
+<br>
+all - Also shows individual files in untracked directories.<br>
+<br>
+When -u option is not used, untracked files and directories are shown (i.e. the same as specifying normal), to help you avoid forgetting to add newly created files. Because it takes extra work to find untracked files in the filesystem, this mode may take some time in a large working tree. Consider enabling untracked cache and split index if supported (see git update-index --untracked-cache and git update-index --split-index), Otherwise you can use no to have git status return more quickly without showing untracked files.<br>
+<br>
+The default can be changed using the status.showUntrackedFiles configuration variable documented in git-config[1].<br>
+<br>
+--ignore-submodules[=&lt;when&gt;]<br>
+Ignore changes to submodules when looking for changes. &lt;when&gt; can be either "none", "untracked", "dirty" or "all", which is the default. Using "none" will consider the submodule modified when it either contains untracked or modified files or its HEAD differs from the commit recorded in the superproject and can be used to override any settings of the ignore option in git-config[1] or gitmodules[5]. When "untracked" is used submodules are not considered dirty when they only contain untracked content (but they are still scanned for modified content). Using "dirty" ignores all changes to the work tree of submodules, only changes to the commits stored in the superproject are shown (this was the behavior before 1.7.0). Using "all" hides all changes to submodules (and suppresses the output of submodule summaries when the config option status.submoduleSummary is set).
+      </p>
+    </div>
+
+</div>
+</div>
 </body>
 </html>

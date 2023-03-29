@@ -1,0 +1,38 @@
+h1,h2,h3{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+  text-align: center;
+  color: coral;
+}
+h2{
+  color: coral;
+}
+div{
+  display: block;
+}
+#centerColumn{
+  float: center;
+  min-height: 600px;
+  height: auto;
+  width: 1100px;
+  text-align: justify;
+}
+
+#content{
+ min-height: 600px; 
+ height: auto;
+ background-color: rgb(192, 190, 176);
+ padding: 0;
+ margin: 0;
+}
+nav{
+  display: block;
+  float: left;
+  min-height: 1600px;
+  width: 500px;
+  height: auto;
+}
+body{
+  background-color: rgb(192, 190, 176);
+}
