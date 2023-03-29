@@ -1,0 +1,24 @@
+.title {
+  font-family: "Sanchez", serif;
+  font-size: 2.5em;
+  margin: 0.7em;
+}
+.main-div {
+  margin: 0 auto;
+}
+h5 {
+  background-color: aliceblue;
+  width: 115px;
+}
+.link-site {
+  text-decoration: underline !important;
+  color: #58ade3;
+}
+.console {
+  background-color: #091e42;
+  color: #fff;
+  padding: 1.5em;
+  font-family: "Sanchez", serif;
+  font-weight: 600;
+  font-size: 1.1em;
+}
