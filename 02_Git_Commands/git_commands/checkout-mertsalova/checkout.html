@@ -14,8 +14,68 @@
 
 <body>
     <div class="w-75 d-flex flex-column align-items-center main-div p-5">
-        
-        
+        <img src="../checkout-mertsalova/main-img.svg" alt="main image" class="w-75" />
+        <h3 class="title">Git Checkout</h3>
+        <div class="w-75">
+            <p>This page is an examination of the git checkout command. It will cover usage examples and edge cases. In
+                Git terms, a "checkout" is the act of switching between different versions of a target entity. The git
+                checkout command operates upon three distinct entities: files, commits, and branches. In addition to the
+                definition of "checkout" the phrase "checking out" is commonly used to imply the act of executing the
+                git checkout command. In the
+                <a class="link-site" href="https://www.atlassian.com/git/tutorials/undoing-changes">Undoing Changes</a>
+                topic, we saw how git checkout can be used to view old commits. The focus for the majority of this
+                document will be checkout operations on branches.
+            </p>
+            <p>
+                Checking out branches is similar to checking out old commits and files in that the working directory is
+                updated to match the selected branch/revision; however, new changes are saved in the project
+                history—that is, it’s not a read-only operation.
+            </p>
+        </div>
+        <h3 class="title">New Branches</h3>
+        <div class="w-75">
+            <p>Git checkout works hand-in-hand with git branch. The git branch command can be used to create a new
+                branch. When you want to start a new feature, you create a new branch off main using git branch
+                new_branch. Once created you can then use git checkout new_branch to switch to that branch.
+                Additionally, The git checkout command accepts a -b argument that acts as a convenience method which
+                will create the new branch and immediately switch to it. You can work on multiple features in a single
+                repository by switching between them with git checkout.
+            </p>
+            <p class="console">git checkout -b ＜new-branch＞</p>
+            <p>
+                The above example simultaneously creates and checks out ＜new-branch＞. The -b option is a convenience
+                flag
+                that tells Git to run git branch before running git checkout ＜new-branch＞.
+            </p>
+            <p class="console">git checkout -b ＜new-branch＞ ＜existing-branch＞</p>
+            <p>
+                By default git checkout -b will base the new-branch off the current HEAD. An optional additional branch
+                parameter can be passed to git checkout. In the above example, ＜existing-branch＞ is passed which then
+                bases new-branch off of existing-branch instead of the current HEAD.
+            </p>
+        </div>
+        <h3 class="title">Switching Branches</h3>
+        <div class="w-75">
+            <p>
+                Switching branches is a straightforward operation. Executing the following will point HEAD to the tip of
+                ＜branchname＞.
+            </p>
+            <p class="console">git checkout ＜branchname＞</p>
+            <p>
+                Git tracks a history of checkout operations in the reflog. You can execute git reflog to view the
+                history.
+            </p>
+        </div>
+        <h3 class="title">Summary</h3>
+        <p class="w-75">
+            This page focused on usage of the git checkout command when changing branches. In summation, git checkout,
+            when
+            used on branches, alters the target of the HEAD ref. It can be used to create branches, switch branches, and
+            checkout remote branches. The git checkout command is an essential tool for standard Git operation. It is a
+            counterpart to git merge. The git checkout and git merge commands are critical tools to enabling git
+            workflows.
+        </p>
+        <a href="../../index.html"><button class="btn btn-outline-secondary">Back</button></a>
     </div>
 </body>
 
