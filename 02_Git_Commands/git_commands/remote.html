@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Remote</title>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 3em;
+        }
+        code {
+            font-weight: bold;
+        }
+        p {
+            font-size: 2em;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <h1>Git Commands-Remote</h1>
+    <p>
+            The SVN system uses a single, centralized repository that serves as a communication hub for developers.
+        Collaboration is carried out by transferring changesets between developers' working copies and the central repository. 
+        However, Git's distributed collaboration model assumes that each developer maintains their own copy of the repository, with their own local history and branch structure. 
+        Typically, users do not share individual sets of changes, but a series of commits. 
+        Instead of committing a single set of changes from a working copy to a central repository, Git allows entire branches to be transferred between repositories.
+
+        The command git remoteis part of the system responsible for synchronizing changes. 
+        Entries registered with the command git remoteare used in conjunction with the git fetch, git pushand commands git pull. 
+        All of these commands are responsible for their part of the synchronization work. More details can be found by clicking on the relevant links.
+    </p>
+
+    <h2>About git remote command </h2>
+
+    <p>
+        The command <code>git remote</code> allows you to create, view, and delete connections to other repositories. 
+        Remote connections are more like bookmarks than direct links to other repositories. 
+        They serve as friendly names that can be used to refer to a not-so-friendly URL, rather than providing real-time access to another repository.
+    </p>
+
+    <h2>Overview of using git remote</h2>
+    <p>
+        Essentially, a command git remoteis an interface for managing a list of remote connection entries that are stored in a /.git/configrepository file. 
+        The following commands are used to view the current state of the list of remote connections.
+    </p>
+
+   
+</body>
+</html>
