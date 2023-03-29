@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git push</title>
+    <style>
+        code
+        {
+            background: rgb(226, 226, 226);
+            border-radius: 4px;
+            padding: 2px;
+            font-weight:200;
+
+        }
+        p
+        {
+           font-family: 'Times New Roman', Times, serif; 
+           font-size: larger;
+           line-height: 1.3
+        }
+        li{
+            line-height: 1.3
+        }
+       
+        div
+        {
+            width: 40%;
+            margin: auto;
+            margin-top: 5%;
+        }
+
+        h1
+        {
+            font-size:40px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Git Push</h1>
+
+    <a>
+        <h2>What Does git push Do?</h2>
+    </a>
+    <p><code>git push</code> updates the remote branch with local commits. It is one of the four commands in Git that
+        prompts interaction
+        with the remote repository. You can also think of <code>git push</code> as <i>update</i> or <i>publish</i>.</p>
+
+    <p>By default, <code>git push</code> only updates the corresponding branch on the remote. So, if you are checked out to
+        the <code>main</code> branch when you execute <code>git push</code>, then only the <code>main</code> branch will be
+        updated. It's always a good idea to use <code>git status</code> to see what branch you are on before pushing to the
+        remote.</p>
+
+    <h2></a>How to Use <code>git push</code></h2>
+
+
+    <p>After you make and commit changes locally, you can share them with the remote repository using <code>git push</code>.
+        Pushing changes to the remote makes your commits accessible to others who you may be collaborating with. This will
+        also update any open pull requests with the branch that you're working on.</p>
+
+    <p>As best practice, it's important to run the <code>git pull</code> command before you push any new changes to the
+        remote branch. This will update your local branch with any new changes that may have been pushed to the remote from
+        other contributors. Pulling before you push can reduce the amount of merge conflicts you create on GitHub - allowing
+        you to resolve them locally before pushing your changes to the remote branch.</p>
+
+    <h3></a>Common usages and options for <code>git push</code></h3>
+
+    <ul>
+        <li><code>git push -f</code>: Force a push that would otherwise be blocked, usually because it will delete or overwrite existing commits <em>(Use with caution!)</em></li>
+        <li><code>git push -u origin [branch]</code>: Useful when pushing a new branch, this creates an upstream tracking branch with a lasting relationship to your local branch</li>
+        <li><code>git push --all</code>: Push all branches</li>
+        <li><code>git push --tags</code>: Publish tags that aren't yet in the remote repository</li>
+    </ul>
+
+        <p>You can see all of the options with <code>git push</code> in <a href="">git-scm's documentation</a>.</p>
+    </div>
+    </body>
+</html>
