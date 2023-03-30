@@ -12,34 +12,42 @@
     <h1>About Git Clone Command</h1>
 
     <h2>NAME</h2>
-    <p>git-clone - Clone a repository into a new directory</p>
+    <p>git-tag - Create, list, delete or verify a tag object signed with GPG</p>
 
     <h2>DESCRIPTION</h2>
     <p>
-        Clones a repository into a newly created directory, creates remote-tracking branches for each branch in the
-        cloned repository (visible using git branch --remotes), and creates and checks out an initial branch that is
-        forked from the cloned repository’s currently active branch.
+        
+    Add a tag reference in refs/tags/, unless -d/-l/-v is given to delete, list or verify tags.
 
-        After the clone, a plain git fetch without arguments will update all the remote-tracking branches, and a git
-        pull without arguments will in addition merge the remote master branch into the current master branch, if any
-        (this is untrue when "--single-branch" is given; see below).
+    Unless -f is given, the named tag must not yet exist.
 
-        This default configuration is achieved by creating references to the remote branch heads under
-        refs/remotes/origin and by initializing remote.origin.url and remote.origin.fetch configuration variables.
+    If one of -a, -s, or -u &lt;key-id&gt; &lt;key-id&gt; is passed, the command creates a tag object, and requires a tag message. Unless -m &lt;msg&gt; or -F &lt;file&gt; is given, an editor is started for the user to type in the tag message.
+
+    If -m &lt;msg&gt; or -F &lt;file&gt; is given and -a, -s, and -u &lt;key-id&gt; are absent, -a is implied.
+
+    Otherwise, a tag reference that points directly at the given object (i.e., a lightweight tag) is created.
+
+    A GnuPG signed tag object will be created when -s or -u &lt;key-id&gt; is used. When -u &lt;key-id&gt; is not used, the committer identity for the current user is used to find the GnuPG key for signing. The configuration variable gpg.program is used to specify custom GnuPG binary.
+
+    Tag objects (created with -a, -s, or -u) are called "annotated" tags; they contain a creation date, the tagger name and e-mail, a tagging message, and an optional GnuPG signature. Whereas a "lightweight" tag is simply a name for an object (usually a commit object).
+
+    Annotated tags are meant for release while lightweight tags are meant for private or temporary object labels. For this reason, some git commands for naming objects (like git describe) will ignore lightweight tags by default.
+
     </p>
 
     <h2>SYNOPSIS</h2>
     <p>
         <code>
-            git clone [--template=&lt;template-directory&gt;]
-                [-l] [-s] [--no-hardlinks] [-q] [-n] [--bare] [--mirror]
-                [-o &lt;name&gt;] [-b &lt;name&gt;] [-u &lt;upload-pack&gt;] [--reference &lt;repository&gt;]
-                [--dissociate] [--separate-git-dir &lt;git-dir&gt;]
-                [--depth &lt;depth&gt;] [--[no-]single-branch] [--no-tags]
-                [--recurse-submodules[=&lt;pathspec&gt;]] [--[no-]shallow-submodules]
-                [--[no-]remote-submodules] [--jobs &lt;n&gt;] [--sparse] [--[no-]reject-shallow]
-                [--filter=&lt;filter&gt; [--also-filter-submodules]] [--] &lt;repository&gt;
-                [&lt;directory&gt;]
+          <p>  
+            git tag [-a | -s | -u ] [-f] [-m &lt;msg&gt; | -F &lt;file&gt;] [-e]
+            &lt;tagname&gt; [&lt;commit&gt; | &lt;object&gt;]
+            git tag -d &lt;tagname&gt;…​
+            git tag [-n[&lt;num&gt;]] -l [--contains &lt;commit&gt;] [--no-contains &lt;commit&gt;]
+            [--points-at &lt;object&gt;] [--column[=&lt;options&gt;] | --no-column]
+            [--create-reflog] [--sort=&lt;key&gt;] [--format=&lt;format&gt;]
+            [--merged &lt;commit&gt;] [--no-merged &lt;commit&gt;] [&lt;pattern&gt;…​]
+            git tag -v [--format=&lt;format&gt;] &lt;tagname&gt;…​
+            </p>     
         </code>
     </p>
 </body>
