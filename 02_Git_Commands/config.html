@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Config</title>
+    <link rel="stylesheet" href="./config.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>About Git Clone Command</h1>
+        <div class="main-title">Config</div>
+        <div class="config__body">
+            <div class="config__block">
+                <h2 class="config__title">About config</h2>
+                <div class="config__about">In this document, we'll take an in-depth look at the git config command. We briefly discussed git config usage on our Setting up a Repository page. The git config command is a convenience function that is used to set Git configuration values on a global or local project level. These configuration levels correspond to .gitconfig text files. Executing git config will modify a configuration text file. We'll be covering common configuration settings like email, username, and editor. We'll discuss Git aliases, which allow you to create shortcuts for frequently used Git operations. Becoming familiar with git config and the various Git configuration settings will help you create a powerful, customized Git workflow.</div>
+            </div>
+            <div class="config__block">
+                <h2 class="config__title">Usage</h2>
+                <div class="config__about">The most basic use case for git config is to invoke it with a configuration name, which will display the set value at that name. Configuration names are dot delimited strings composed of a 'section' and a 'key' based on their hierarchy. For example: <span>user.email</span></div>
+            </div>
+            <div class="config__block">
+                <h2 class="config__title">Git config levels and files</h2>
+                <div class="config__level">
+                    <div class="config-level__first">
+                        The git config command can accept arguments to specify which configuration level to operate on. The following configuration levels are available: <span>--local</span>
+                    </div>
+                    <div class="config-level__second">
+                        By default, git config will write to a local level if no configuration option is passed. Local level configuration is applied to the context repository git config gets invoked in. Local configuration values are stored in a file that can be found in the repo's .git directory: .git/config <span>--global</span>
+                    </div>
+                    <div class="config-level__third">
+                        Global level configuration is user-specific, meaning it is applied to an operating system user. Global configuration values are stored in a file that is located in a user's home directory. ~ /.gitconfig on unix systems and C:\Users\\.gitconfig on windows <span>--system</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
