@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Push</title>
+</head>
+
+<body>
+    <h1>About Git Push Command</h1>
+
+    <h2>NAME</h2>
+    <p>git-push - Update remote refs along with associated objects</p>
+
+    <h2>DESCRIPTION</h2>
+    <p>
+        Updates remote refs using local refs, while sending objects necessary to complete the given refs.
+
+        You can make interesting things happen to a repository every time you push into it, by setting up hooks there. See documentation for git-receive-pack[1].
+
+        When the command line does not specify where to push with the &lt;repository&gt; argument, branch.*.remote configuration for the current branch is consulted to determine where to push. If the configuration is missing, it defaults to origin.
+
+        When the command line does not specify what to push with &lt;refspec&gt;... arguments or --all, --mirror, --tags options, the command finds the default &lt;refspec&gt; by consulting remote.*.push configuration, and if it is not found, honors push.default configuration to decide what to push (See git-config[1] for the meaning of push.default).
+
+        When neither the command-line nor the configuration specify what to push, the default behavior is used, which corresponds to the simple value for push.default: the current branch is pushed to the corresponding upstream branch, but as a safety measure, the push is aborted if the upstream branch does not have the same name as the local one.
+    </p>
+
+    <h2>SYNOPSIS</h2>
+    <p>
+        <code>
+        git push [--all | --mirror | --tags] [--follow-tags] [--atomic] [-n | --dry-run] [--receive-pack=&lt;git-receive-pack&gt;]
+            [--repo=&lt;repository&gt;] [-f | --force] [-d | --delete] [--prune] [-v | --verbose]
+            [-u | --set-upstream] [-o &lt;string&gt; | --push-option=&lt;string>]
+             [--[no-]signed|--signed=(true|false|if-asked)]
+            [--force-with-lease[=&lt;refname&gt;[:&lt;&lt;&lt;expect&gt;]] [--force-if-includes]]
+            [--no-verify] [&lt;repository&gt; [&lt;refspec&gt;…​]]
+        </code>
+    </p>
+</body>
+
+</html>
