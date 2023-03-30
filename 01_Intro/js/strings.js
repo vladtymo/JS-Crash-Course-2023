@@ -7,9 +7,9 @@ console.log("Char at 3: ", login.charAt(3)); // l
 console.log(login + end);
 
 if (login.endsWith("?")) console.log("Ends with ?");
-else console.log("Does not end with ?");
 
 if (login.startsWith("A")) console.log("Starts with A");
+else console.log("Does not start with A");
 
 console.log("Index of i: ", login.indexOf('i')); // 6, if not exists: -1
 console.log("Last Index of i: ", login.lastIndexOf('i')); // 9
@@ -33,6 +33,7 @@ console.log("Lower case: ", login.toLowerCase());
 console.log("Before substring: " + login);
 console.log('Substring with 6 symbols from: ', login.substring(login.indexOf('"'), login.lastIndexOf('"') + 1));
 
+// white-space characters: ' ' '\t' '\n'
 let email = prompt("Enter your email:");   // "  example@gmail.com "
 console.log(`Trimmed: |${email.trim()}|`); // "example@gmail.com"
 
