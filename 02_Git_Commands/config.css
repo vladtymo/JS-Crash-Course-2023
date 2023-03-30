@@ -16,6 +16,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 
 body{
     font-size: 18px;
+    background: #e1e1e1;
 }
 .wrapper{
     max-width: 1200px;
@@ -43,4 +44,9 @@ h1{
 .config__level{
     display: flex;
     gap: 20px;
+    
+}
+.config__level span{
+    background: white;
+    color: red;
 }
