@@ -1,5 +1,9 @@
+body{
+    background-color: #343435;
+}
+
 nav{
-    min-width: 1050px;
+    min-width: 1220px;
     display: flex;
     justify-content: center;
 }
@@ -9,15 +13,10 @@ nav{
 }
 .nav_menu img{   
     filter: invert(1);
-    width: 320%; 
+    width: 250%; 
 }
 .nav_menu:hover img{
     filter: invert(0);
-}
-
-
-body{
-    background-color: #343435;
 }
 
 .container{
@@ -28,8 +27,8 @@ body{
     padding: 15px;
     background-color: rgb(172, 164, 122);
     min-height: 760px;
-    min-width: 660px;
-
+    min-width: 900px;
+    max-width: 1020px;
     box-shadow: 15px 10px 8px rgb(204, 204, 225);
     border: solid;
     border-width: 4px;
@@ -43,10 +42,9 @@ body{
     flex-wrap: wrap;
     justify-content: center;
 }
-.git_command{
+.name{
     margin-left: 45px;
     color: #960e0e;
-    font-size: 25px;
     text-shadow: 2px 1px 1px rgb(1, 0, 0);
 }
 .about{
@@ -55,4 +53,38 @@ body{
     font-size: 15px;
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 1px rgb(1, 0, 0);
+}
+pre{
+    display: block;
+    overflow: hidden;
+    max-width: 550px;
+    max-height: 100px;
+    padding: 15px 200px 0px 0px;
+    margin-left: 40px;
+    background-color: #e8e7dd;
+    border: solid;
+    border-width: 1px;
+    border-color: #1f1e1e;
+    border-radius: 35px;
+}
+.text{
+    margin-left: 47px;
+    max-width: 850px;
+    font-size: 1.05em;
+}
+
+.synopsis{
+    margin-top: 40px;
+}
+.description{
+    margin-top: 40px;
+}
+.options{
+    margin-top: 40px;
+}
+.subcommands{
+    margin-top: 40px;
+}
+.examples{
+    margin-top: 40px;
 }
