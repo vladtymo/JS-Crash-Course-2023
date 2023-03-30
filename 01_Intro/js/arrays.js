@@ -83,6 +83,9 @@ console.log("Sorted with custom func:", array);
 array.splice(2, 3); // 3 element from index 2
 console.log("After remove:", array);
 
+array.reverse();
+console.log("Reversed:", array);
+
 const copy = array.slice(1, array.length - 1);
 console.log("Copied array:", copy);
 
