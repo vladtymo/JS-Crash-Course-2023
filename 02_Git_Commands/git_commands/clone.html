@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Clone</title>
+</head>
+
+<body>
+    <h1>About Git Clone Command</h1>
+
+    <h2>NAME</h2>
+    <p>git-clone - Clone a repository into a new directory</p>
+
+    <h2>DESCRIPTION</h2>
+    <p>
+        Clones a repository into a newly created directory, creates remote-tracking branches for each branch in the
+        cloned repository (visible using git branch --remotes), and creates and checks out an initial branch that is
+        forked from the cloned repository’s currently active branch.
+
+        After the clone, a plain git fetch without arguments will update all the remote-tracking branches, and a git
+        pull without arguments will in addition merge the remote master branch into the current master branch, if any
+        (this is untrue when "--single-branch" is given; see below).
+
+        This default configuration is achieved by creating references to the remote branch heads under
+        refs/remotes/origin and by initializing remote.origin.url and remote.origin.fetch configuration variables.
+    </p>
+
+    <h2>SYNOPSIS</h2>
+    <p>
+        <code>
+            git clone [--template=&lt;template-directory&gt;]
+                [-l] [-s] [--no-hardlinks] [-q] [-n] [--bare] [--mirror]
+                [-o &lt;name&gt;] [-b &lt;name&gt;] [-u &lt;upload-pack&gt;] [--reference &lt;repository&gt;]
+                [--dissociate] [--separate-git-dir &lt;git-dir&gt;]
+                [--depth &lt;depth&gt;] [--[no-]single-branch] [--no-tags]
+                [--recurse-submodules[=&lt;pathspec&gt;]] [--[no-]shallow-submodules]
+                [--[no-]remote-submodules] [--jobs &lt;n&gt;] [--sparse] [--[no-]reject-shallow]
+                [--filter=&lt;filter&gt; [--also-filter-submodules]] [--] &lt;repository&gt;
+                [&lt;directory&gt;]
+        </code>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+body {
+    background-color: #C9C9C9;
+    margin: 0px;
+    padding: 0px;
+}
+#image {
+    width: 120px;
+    margin: 30px 40px 40px 50px;    /*object-position: 40px 35px;*/
+}
+p {
+    padding-left: 20px;
+    padding-right: 15px;
+}
+h2 {
+    padding-left: 25px;
+}
+
+.container {
+
+    width: 80%;
+
+    padding: 1%;
+
+}
+.linux-img {
+    float: left;
+}
+.button {
+    font: bold 18px Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background-color: #c94217;
+    color: #ffffff;
+    padding: 2px 6px 2px 6px;
+    border-radius: 10px;
+}
+.text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 120%;
+    margin-top: 60px;
+}
