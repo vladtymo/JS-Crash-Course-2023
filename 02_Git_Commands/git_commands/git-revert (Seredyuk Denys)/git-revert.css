@@ -1,0 +1,58 @@
+nav{
+    min-width: 1050px;
+    display: flex;
+    justify-content: center;
+}
+.nav_menu{
+    background-color: #11ffee00;
+    border-width: 0;
+}
+.nav_menu img{   
+    filter: invert(1);
+    width: 320%; 
+}
+.nav_menu:hover img{
+    filter: invert(0);
+}
+
+
+body{
+    background-color: #343435;
+}
+
+.container{
+    display: flex; 
+    justify-content: center;
+}
+.block{
+    padding: 15px;
+    background-color: rgb(172, 164, 122);
+    min-height: 760px;
+    min-width: 660px;
+
+    box-shadow: 15px 10px 8px rgb(204, 204, 225);
+    border: solid;
+    border-width: 4px;
+    border-color: #1f1e1e;
+    border-radius: 35px;
+}
+
+.on_top{
+    display: flex;
+    min-width: 660px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.git_command{
+    margin-left: 45px;
+    color: #960e0e;
+    font-size: 25px;
+    text-shadow: 2px 1px 1px rgb(1, 0, 0);
+}
+.about{
+    margin-top: -15px;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 1px rgb(1, 0, 0);
+}
