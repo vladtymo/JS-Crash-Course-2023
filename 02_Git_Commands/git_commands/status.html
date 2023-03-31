@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Status</title>
+</head>
+
+<body>
+    <h1>Git Status</h1>
+
+    <h2>Name</h2>
+    <a href="https://git-scm.com/docs/git-status">git status Documentation</a>.
+    <p>git status [options] - Show the working tree status</p>
+
+    <h2>Description</h2>
+    <p>
+        Displays paths that have differences between the index file and the current HEAD commit, paths that have differences between the working tree and the index file, and paths in the working tree that are not tracked by Git (and are not ignored by gitignore). 
+        The first are what you would commit by running git commit; the second and third are what you could commit by running git add before running git commit.
+    </p>
+    
+    <h2>Some options</h2>
+    <p>
+        -s
+        --short
+        Give the output in the short-format.
+        
+        -b
+        --branch
+        Show the branch and tracking info even in short-format.
+        
+        --show-stash
+        Show the number of entries currently stashed away.
+    
+        --long
+        Give the output in the long-format. This is the default.
+    </p>
+
+    <h2>Synopsis</h2>
+    <p>
+        <code>
+            $ git status 
+            On branch main
+            Initial commit
+            Untracked files:
+              (use "git add <file>..." to include in what will be committed)
+                locations.txt
+            nothing added to commit but untracked files present (use "git add" to track)
+        </code>
+    </p>
+
+    
+</body>
+
+</html>
