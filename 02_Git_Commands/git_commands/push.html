@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Git Clone Command</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h1>Git Push Command</h1>
+
+    <p>
+      <b>Description:</b> The "git push" command is used to upload local
+      repository content to a remote repository.
+    </p>
+
+    <p><b>Syntax:</b></p>
+    <p>git push &lt;remote&gt; &lt;branch&gt;</p>
+
+    <p><b>Examples:</b></p>
+    <ul>
+      <li>git push origin master</li>
+      <li>git push heroku main</li>
+    </ul>
+
+    <p>
+      <b>Explanation:</b> The "git push" command takes two arguments - the
+      remote repository and the branch you want to push. The remote can be a
+      name (e.g. origin) or a URL. The branch can be a name (e.g. master) or a
+      reference (e.g. HEAD). Once the push is complete, the changes will be
+      reflected in the remote repository.
+    </p>
+
+    <p><b>Options:</b></p>
+    <table>
+      <tr>
+        <th>Option</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>-f, --force</td>
+        <td>Forces the push, even if it results in a non-fast-forward merge</td>
+      </tr>
+      <tr>
+        <td>--tags</td>
+        <td>Pushes all tags to the remote repository</td>
+      </tr>
+      <tr>
+        <td>--dry-run</td>
+        <td>Simulates the push without actually pushing any changes</td>
+      </tr>
+    </table>
+  </body>
+</html>
