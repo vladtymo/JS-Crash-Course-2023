@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Clone</title>
+</head>
+
+<body>
+    <h1>About Git Status Command</h1>
+
+    <h2>What Does git status Do?</h2>
+
+    <p>When in doubt, run git status. This is always a good idea. The git status command only outputs information, it won't modify commits or changes in your local repository.</p>
+    <p>A useful feature of git status is that it will provide helpful information depending on your current situation. In general, you can count on it to tell you:</p>
+    <ul>
+        <li>Where HEAD is pointing, whether that is a branch or a commit (this is where you are "checked out" to)</li>
+        <li>If you have any changed files in your current directory that have not yet been committed</li>
+        <li>If changed files are staged or not</li>
+        <li>If your current local branch is linked to a remote branch, then git status will tell you if your local branch is behind or ahead by any commits</li>
+    </ul>
+    <p>During merge conflicts, git status will also tell you exactly which files are the source of the conflict.</p>
+
+    <h2>How to Use git status</h2>
+
+    <h3>Common usages and options for git status</h3>
+    <ul>
+        <li>git status: Most often used in its default form, this shows a good base of information</li>
+        <li>git status -s: Give output in short format</li>
+        <li>git status -v: Shows more "verbose" detail including the textual changes of any uncommitted files</li>
+    </ul>
+    <p>You can see all of the options with git status in git-scm's documentation.</p>
+    
+    <h2>Related Terms</h2>
+
+    <ul>
+        <li>git clone [url]: Clone (download) a repository that already exists on GitHub, including all of the files, branches, and commits.</li>
+        <li>git remote -v: Show the associated remote repositories and their stored name, like origin.</li>
+        <li>git remote add origin &#60url&#62: Add a remote so you can collaborate with others on a newly initialized repository.</li>
+        <li>git push: Uploads all local branch commits to the remote.</li>
+        <li>git push -u origin main: When pushing a branch for the first time, this type of push will configure the relationship between the remote and your local repository so that you can use git pull and git push with no additional options in the future.</li>
+    </ul>
+
+</body>
+
+</html>
