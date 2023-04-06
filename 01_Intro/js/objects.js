@@ -76,3 +76,21 @@ let admin = {
     username: "test",
     //... duplicate all fields and methods
 }
+
+// ------------ system objects ------------
+let number = 123.654;
+
+console.log(`Truncate: ${Math.round(number)}`);
+console.log(`Round: ${Math.trunc(number)}`);
+console.log(`Fixed decimals: ${number.toFixed(2)}`);
+// ceil(), floor()
+
+// get random
+console.log(`Random: ${Math.floor(Math.random() * 100)}`);
+// pow(), sqrt(), abs()
+
+const birthdate = new Date(2010, 0, 30); // 30.01.2010
+
+console.log(`Birthdate: ${birthdate.toDateString()}`);
+
+console.log(`Today: ${new Date(Date.now())}`);
