@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Reset</title>
+</head>
+
+<body>
+    <h1>About Git Clone Command</h1>
+
+    <h2>NAME</h2>
+    <p>git-reset - Reset current HEAD to the specified stat</p>
+
+    <h2>DESCRIPTION</h2>
+    <p>
+        In the first three forms, copy entries from to the index. In the last form, set the current branch
+        head (HEAD) to, optionally modifying index and working tree to match. The defaults to HEAD in all forms.
+        These forms reset the index entries for all paths that match the to their state at. (It does not affect the
+        working tree or the current branch.)
+    </p>
+
+    <h2>SYNOPSIS</h2>
+    <p>
+        <code>
+                git reset [-q] [&lt;tree-ish>] [--] &lt;pathspec&gt;…​
+                    git reset [-q] [--pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]] [&lt;tree-ish&gt;]
+                    git reset (--patch | -p) [&lt;tree-ish&gt;] [--] [&lt;pathspec&gt;…​]
+                    git reset [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [&lt;commit&gt;]
+        </code>
+    </p>
+</body>
+
+</html>
