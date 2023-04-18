@@ -33,8 +33,10 @@ addBtn.onclick = () => {
     console.log('Clicked!');
 
     const newProduct = readProduct();
-    products.push(newProduct);
 
+    // TODO: add validation
+
+    products.push(newProduct);
     addProductToTable(newProduct);
 }
 
