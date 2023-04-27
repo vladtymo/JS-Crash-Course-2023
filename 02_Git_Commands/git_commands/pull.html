@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Pull</title>
+</head>
+
+<body>
+    <h1>About Git Pull Command</h1>
+
+    <h2>NAME</h2>
+    <p>git-pull - Fetch from and integrate with another repository or a local branch</p>
+
+    <h2>DESCRIPTION</h2>
+    <p>
+        Incorporates changes from a remote repository into the current branch. 
+        If the current branch is behind the remote, then by default it will 
+        fast-forward the current branch to match the remote. If the current branch 
+        and the remote have diverged, the user needs to specify how to reconcile 
+        the divergent branches with --rebase or --no-rebase (or the corresponding 
+        configuration option in pull.rebase).
+
+        More precisely, git pull runs git fetch with the given parameters and then 
+        depending on configuration options or command line flags, will call either 
+        git rebase or git merge to reconcile diverging branches.
+
+        Default values for <repository> and <branch> are read from the "remote" 
+        and "merge" configuration for the current branch as set by git-branch[1] --track.
+    </p>
+
+    <h2>SYNOPSIS</h2>
+    <p>
+        <code>
+            git pull [<options>] [<repository> [<refspec>…​]]
+        </code>
+    </p>
+</body>
+
+</html>
