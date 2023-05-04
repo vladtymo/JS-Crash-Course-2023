@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    margin: 10px auto;
+}
+
+h1 {
+    background-color: lightgray;
+    padding: 10px;
+    text-align: center;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+#product-list li {
+    display: inline-block;
+    margin: 5px;
+}
+
+#product-list li img {
+    height: 200px;
+    object-fit: cover;
+}
