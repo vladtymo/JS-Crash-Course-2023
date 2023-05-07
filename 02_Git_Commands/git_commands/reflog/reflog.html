@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reflog</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>
+    About reflog command
+</h1>
+<h1>
+    Name
+</h1>
+<p>
+    git-reflog - Manage reflog information
+</p>
+<div class="sect1">
+    <h2 id="_description">DESCRIPTION</h2>
+    <div class="sectionbody">
+        <div class="paragraph">
+            <p>This command manages the information recorded in the reflogs.</p>
+        </div>
+        <div class="paragraph">
+            <p>Reference logs, or "reflogs", record when the tips of branches and
+                other references were updated in the local repository. Reflogs are
+                useful in various Git commands, to specify the old value of a
+                reference. For example, <code>HEAD@{2}</code> means "where HEAD used to be two
+                moves ago", <code>master@{one.week.ago}</code> means "where master used to point
+                to one week ago in this local repository", and so on.
+            </p>
+        </div>
+        <div class="paragraph">
+            <p>The command takes various subcommands, and different options
+                depending on the subcommand:</p>
+        </div>
+        <div class="paragraph">
+            <p>The "show" subcommand (which is also the default, in the absence of
+                any subcommands) shows the log of the reference provided in the
+                command-line (or <code>HEAD</code>, by default). The reflog covers all recent
+                actions, and in addition the <code>HEAD</code> reflog records branch switching.
+                <code>git reflog show</code> is an alias for <code>git log -g --abbrev-commit
+                    --pretty=oneline</code>;</p>
+        </div>
+        <div class="paragraph">
+            <p>The "expire" subcommand prunes older reflog entries. Entries older
+                than <code>expire</code> time, or entries older than <code>expire-unreachable</code> time
+                and not reachable from the current tip, are removed from the reflog.
+                This is typically not used directly by end users&thinsp;—&thinsp;instead.</p>
+        </div>
+        <div class="paragraph">
+            <p>The "delete" subcommand deletes single entries from the reflog. Its
+                argument must be an <em>exact</em> entry (e.g. "<code>git reflog delete
+                    master@{2}</code>"). This subcommand is also typically not used directly by
+                end users.</p>
+        </div>
+        <div class="paragraph">
+            <p>The "exists" subcommand checks whether a ref has a reflog.  It exits
+                with zero status if the reflog exists, and non-zero status if it does
+                not.</p>
+        </div>
+    </div>
+</div>
+<p>
+
+</p>
+<h1>
+    Synopsis
+</h1>
+<pre class="content"><em>git reflog</em> [show] [&lt;log-options&gt;] [&lt;ref&gt;]
+<em>git reflog expire</em> [--expire=&lt;time&gt;] [--expire-unreachable=&lt;time&gt;]
+	[--rewrite] [--updateref] [--stale-fix]
+	[--dry-run | -n] [--verbose] [--all [--single-worktree] | &lt;refs&gt;…​]
+<em>git reflog delete</em> [--rewrite] [--updateref]
+	[--dry-run | -n] [--verbose] &lt;ref&gt;@{&lt;specifier&gt;}…​
+<em>git reflog exists</em> &lt;ref&gt;</pre>
+</body>
+</html>
