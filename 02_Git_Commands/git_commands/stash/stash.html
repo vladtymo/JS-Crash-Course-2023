@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="./stash-style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git Stash</title>
+</head>
+<body>
+<div class="container">
+  <div class="linux-img">
+    <img  id="image" src="../../assets/github.png"></div>
+  <div class="text">
+    <h1>About Git Stash command</h1></div>
+  <a href="../../index.html" class="button">Main</a>
+</div>
+<hr>
+  <h2>Name</h2>
+  <p>   git-stash - Stash the changes in a dirty working directory away</p>
+
+  <h2>SYNOPSIS</h2>
+  <p><code>
+    git stash list [&lt;log-optionse&gt;]
+    git stash show [-u | --include-untracked | --only-untracked] [&lt;diff-optionse&gt;] [&lt;stashe&gt;]
+      git stash drop [-q | --quiet] [&lt;stashe&gt;]
+        git stash pop [--index] [-q | --quiet] [&lt;stashe&gt;]
+          git stash apply [--index] [-q | --quiet] [&lt;stashe&gt;]
+            git stash branch &lt;branchnamee&gt; [&lt;stashe&gt;]
+              git stash [push [-p | --patch] [-S | --staged] [-k | --[no-]keep-index] [-q | --quiet]
+              [-u | --include-untracked] [-a | --all] [(-m | --message) &lt;messagee&gt;]
+                [--pathspec-from-file=&lt;filee&gt; [--pathspec-file-nul]]
+                  [--] [&lt;pathspece&gt;…​]]
+                    git stash save [-p | --patch] [-S | --staged] [-k | --[no-]keep-index] [-q | --quiet]
+                    [-u | --include-untracked] [-a | --all] [&lt;messagee&gt;]
+                      git stash clear
+                      git stash create [&lt;messagee&gt;]
+                        git stash store [(-m | --message) &lt;messagee&gt;] [-q | --quiet] &lt;commite&gt;
+  </code></p>
+
+  <h2>DESCRIPTION</h2>
+  <p>
+
+    Use git stash when you want to record the current state of the working directory and the index, but want to go back to a clean working directory. The command saves your local modifications away and reverts the working directory to match the HEAD commit.
+
+    The modifications stashed away by this command can be listed with git stash list, inspected with git stash show, and restored (potentially on top of a different commit) with git stash apply. Calling git stash without any arguments is equivalent to git stash push. A stash is by default listed as "WIP on branchname …​", but you can give a more descriptive message on the command line when you create one.
+
+    The latest stash you created is stored in refs/stash; older stashes are found in the reflog of this reference and can be named using the usual reflog syntax (e.g. stash@{0} is the most recently created stash, stash@{1} is the one before it, stash@{2.hours.ago} is also possible). Stashes may also be referenced by specifying just the stash index (e.g. the integer n is equivalent to stash@{n}).
+  </p>
+
+
+</body>
+</html>
