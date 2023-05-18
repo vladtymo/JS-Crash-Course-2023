@@ -13,7 +13,7 @@ console.log('test():', regex.test(text));
 
 // flags: 
 //      g - global
-//      i - case insansative
+//      i - case insensitive
 //      m - multiline
 
 var regex = /\w+[.,!?]/g
