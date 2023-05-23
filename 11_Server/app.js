@@ -1,5 +1,9 @@
 // server logic
 
+// How to run a server:
+// -> npm install
+// -> node app.js
+
 const express = require('express'),
     app = express();
 
