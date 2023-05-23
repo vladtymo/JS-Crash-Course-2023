@@ -1,0 +1,19 @@
+{
+  "name": "first_server",
+  "version": "1.0.0",
+  "description": "This is a sample Node.js server app project ",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "server"
+  ],
+  "author": "Vlad Tymoshchuk",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
