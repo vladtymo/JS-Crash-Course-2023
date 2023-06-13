@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/02_Git_Commands/style.css">
+    <title>Git Log</title>
+    <style>
+        body {
+            padding: 22px;
+            margin-bottom: 35px;
+            background-color: #5f6361;
+        }
+
+        .overlay {
+            width: 80%;
+            min-width: 30%;
+            margin: 3% auto;
+            display: block;
+            padding: 2%;
+            height: auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 40px;
+            text-align: justify;
+        }
+
+        .button {
+            position: sticky;
+            top: 30px;
+            background-color: #5f6361;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        pre {
+            background-color: #fff;
+            border: solid 1px #efeee6;
+            border-radius: 3px;
+            color: #f14e32;
+            display: block;
+            font-family: Courier, monospace;
+            line-height: 18px;
+            margin-bottom: 1em;
+            overflow: auto;
+            padding: 10px 15px 13px;
+        }
+
+        #synopsis {
+            line-height: 10px;
+            color: #4e443c;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            background-color: #e8e7dd;
+        }
+
+        code {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay">
+        <a class="button" href="/02_Git_Commands/index.html">Home page</a>
+        <h1>About Git Log Command</h1>
+
+        <h3>NAME</h3>
+
+        <h4>git-log - Show commit logs</h4>
+
+        <h2>DESCRIPTION</h2>
+
+        <p>
+            Shows the commit logs.
+            List commits that are reachable by following the parent links from the given commit(s),
+            but exclude commits that
+            are reachable from the one(s) given with a ^ in front of them.
+            The output is given in reverse chronological order by default.
+            You can think of this as a set operation.
+            Commits reachable from any of the commits given on the command line form a set,
+            and then commits reachable from any of the ones given with ^ in front are subtracted from that set.
+            The remaining commits are what comes out in the command’s output.
+            Various other options and paths parameters can be used to further limit the result.
+            Thus, the following command:
+        </p>
+
+        <pre>$ git log foo bar ^baz</pre>
+
+        <p>
+            means "list all the commits which are reachable from foo or bar, but not from baz".
+            A special notation "&lt;commit1&gt;..&lt;commit2&gt;" can be used as a short-hand for "^&lt;commit1&gt;
+            &lt;commit2&gt;". For example, either of the following may be used interchangeably:
+        </p>
+
+        <pre>$ git log origin..HEAD <br>$ git log HEAD ^origin</pre>
+
+        <p>
+            Another special notation is "&lt;commit1&gt;…​&lt;commit2&gt;" which is useful for merges.
+            The resulting set of commits is the symmetric difference between the two operands.
+            The following two commands are equivalent:
+        </p>
+
+        <pre>$ git log A B --not $(git merge-base --all A B) <br>$ git log A...B</pre>
+
+        <p>
+            The command takes options applicable to the git-rev-list[1] command to control what is shown and how, and
+            options applicable to the git-diff[1] command to control how the changes each commit introduces are shown.
+        </p>
+
+        <h2>SYNOPSIS</h2>
+
+        <p id="synopsis">
+            <code>
+  git log [&lt;options&gt;] [&lt;revision-range&gt;] [[--] &lt;path&gt;…​]
+            </code>
+        </p>
+    </div>
+</body>
+
+</html>
